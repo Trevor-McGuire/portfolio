@@ -8,27 +8,23 @@
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-
-<body>
-  <header>
-    <h1>Trevor McGuire</h1>
-    <h2>Web Developer</h2>
-  </header>
-
-  <main>
-    <aside>
-      <nav>
-        <ul>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Projects</li>
-        </ul>
-      </nav>
-    </aside>
-    <section>
+  <body>
+    <input type="radio" id="about" name="section" value="about">
+    <input type="radio" id="contact" name="section" value="contact">
+    <input type="radio" id="projects" name="section" value="projects">
+    <header>
+      <h1>Trevor McGuire</h1>
+      <h2>Web Developer</h2>
+    </header>
+    <nav>
+      <label for="about">About:</label>
+      <label for="contact">Contact:</label>
+      <label for="projects">Projects:</label>
+    </nav>
+    <section id="about">
       <p>Born in 1992 in Madison, Wisconsin. It is my belief that all things in life can be continually improved. Possessing firsthand experience in web development and leadership skills to guide large projects.</p>
     </section>
-    <section>
+    <section id="contact">
       <h3>I can start working from... </h3>
       <ul>
         <li>September 2023 and later</li>
@@ -55,7 +51,7 @@
         <li>Source code will remain private to myself</li>
       </ul>
     </section>
-    <section>
+    <section id="projects">
       <article>
         <h3>Project 1</h3>
         <img src="">
@@ -69,8 +65,5 @@
         <img src="">
       </article>
     </section>
-
-  </main>
-</body>
-
+  </body>
 </html>

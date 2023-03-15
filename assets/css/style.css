@@ -1,4 +1,71 @@
-header {background-color: red;}
-main {background-color: green;}
-section{background-color: blue;}
-article {background-color: yellow;}
+/* 
+ * CSS GRID
+ * name the grid areas
+ * set the display, areas, and rows/columns
+ */
+ header{grid-area:header}
+nav{grid-area:nav}
+section{grid-area:section}
+ body {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'nav section';
+  grid-template-rows: 20vh 80vh;
+  grid-template-columns: 38vw 62vw;
+}
+/* 
+ * PAGE FUNCTIONALITY
+ * turn all section display to off
+ * use the checked input to select the section and turn the display to block
+ * inputs are checked by clicking the lables in the nav 
+ * turn off the visuals of the inputs 
+ */
+section{display:none}
+input{display:none}
+input:checked:nth-of-type(1)~section:nth-of-type(1),
+input:checked:nth-of-type(2)~section:nth-of-type(2),
+input:checked:nth-of-type(3)~section:nth-of-type(3){
+  display:block;
+}
+input:checked:nth-of-type(1)~nav>label:nth-of-type(1),
+input:checked:nth-of-type(2)~nav>label:nth-of-type(2),
+input:checked:nth-of-type(3)~nav>label:nth-of-type(3) {
+  color:red;
+}
+/* 
+ * OTHER
+ */
+body {
+  background-color: black;
+  color:white;
+  margin:0;
+}
+header {
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+}
+nav label {
+  padding: 20px;
+  padding-left: 40px;
+  cursor: pointer;
+}
+nav label:hover {
+  text-decoration: underline; 
+}
+nav label:checked {
+  color:red;
+}
+
+section{
+  background-color: blue;
+}
+article {background-color: red;}
