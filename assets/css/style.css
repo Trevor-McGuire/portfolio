@@ -36,10 +36,42 @@ input:checked:nth-of-type(3)~nav>label:nth-of-type(3) {
 /* 
  * OTHER
  */
+:root {
+  --color-1:#1471b822;
+  --color-2:#14b81416;
+  --far-left-per:transparent 55%;
+  --mid-left-per:transparent 65%;
+  --mid-right-per:transparent 70%;
+  --far-right-per:transparent 80%;
+  --dimension-a:1.5em 2em;
+  --dimension-b:2em 1.5em;
+}
+body * {
+  box-sizing: content-box;
+}
 body {
   background-color: black;
   color:white;
   margin:0;
+  background-image: 
+    linear-gradient(30deg, var(--far-left-per), var(--color-1), var(--far-right-per)),
+    linear-gradient(-30deg, var(--far-left-per), var(--color-1), var(--far-right-per)),
+    linear-gradient(120deg, var(--far-left-per), var(--color-2),var(--far-right-per)),
+    linear-gradient(60deg, var(--far-left-per), var(--color-2), var(--far-right-per)),
+    linear-gradient(30deg, var(--mid-left-per), var(--color-1), var(--mid-right-per)),
+    linear-gradient(-30deg, var(--mid-left-per), var(--color-1), var(--mid-right-per)),
+    linear-gradient(120deg, var(--mid-left-per), var(--color-2), var(--mid-right-per)),
+    linear-gradient(60deg, var(--mid-left-per), var(--color-2), var(--mid-right-per));
+  background-size: 3em 4em,3em 4em, 4em 3em,4em 3em, 3em 4em,3em 4em, 4em 3em,4em 3em;
+  background-size: 
+    var(--dimension-a),
+    var(--dimension-a),
+    var(--dimension-b),
+    var(--dimension-b),
+    var(--dimension-a),
+    var(--dimension-a),
+    var(--dimension-b),
+    var(--dimension-b);
 }
 header {
   text-align: center;
@@ -64,8 +96,16 @@ nav label:hover {
 nav label:checked {
   color:red;
 }
-
-section{
-  background-color: blue;
+section p,
+section article {
+  width:50%;
+  display:inline-block;
+  background-image:
+    linear-gradient(transparent ,black,transparent),
+    linear-gradient(90deg, transparent, black, transparent);
+  padding:30px;
+  border: 1px solid red;
 }
-article {background-color: red;}
+#projects article:first-of-type {
+  width:50%
+}
