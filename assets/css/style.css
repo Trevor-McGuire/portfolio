@@ -1,32 +1,42 @@
 /* 
  * CSS GRID
- * name the grid areas
- * set the display, areas, and rows/columns
+ * grid used on <body> and #projects
  */
- header{grid-area:header}
+header{grid-area:header}
 nav{grid-area:nav}
 section{grid-area:section}
- body {
+body {
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
   display: grid;
   grid-template-areas:
     'header header'
     'nav section';
-  grid-template-rows: 20vh 80vh;
-  grid-template-columns: 38vw 62vw;
+  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 1fr 3fr;
+}
+#projects {
+  grid-template-columns: 1fr 1fr;
+}
+#projects article:first-of-type {
+  grid-column: 1 / span 2;
 }
 /* 
  * PAGE FUNCTIONALITY
- * turn all section display to off
- * use the checked input to select the section and turn the display to block
- * inputs are checked by clicking the lables in the nav 
- * turn off the visuals of the inputs 
+ * inputs placed highest in <body>
+ * when checked inputs:
+ *  - changes dipslay of <section>
+ *  - color labels
  */
 section{display:none}
 input{display:none}
 input:checked:nth-of-type(1)~section:nth-of-type(1),
-input:checked:nth-of-type(2)~section:nth-of-type(2),
-input:checked:nth-of-type(3)~section:nth-of-type(3){
+input:checked:nth-of-type(2)~section:nth-of-type(2){
   display:block;
+}
+input:checked:nth-of-type(3)~section:nth-of-type(3) {
+  display:grid;
 }
 input:checked:nth-of-type(1)~nav>label:nth-of-type(1),
 input:checked:nth-of-type(2)~nav>label:nth-of-type(2),
@@ -35,6 +45,9 @@ input:checked:nth-of-type(3)~nav>label:nth-of-type(3) {
 }
 /* 
  * OTHER
+ * everything not related to CSS grid 
+ * or <section> dipslay functionality
+ * is found below
  */
 :root {
   --color-1:#1471b822;
@@ -47,7 +60,7 @@ input:checked:nth-of-type(3)~nav>label:nth-of-type(3) {
   --dimension-b:2em 1.5em;
 }
 body * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 body {
   background-color: black;
@@ -96,16 +109,13 @@ nav label:hover {
 nav label:checked {
   color:red;
 }
+section {
+  overflow-y: auto;
+}
 section p,
 section article {
-  width:50%;
-  display:inline-block;
   background-image:
     linear-gradient(transparent ,black,transparent),
     linear-gradient(90deg, transparent, black, transparent);
-  padding:30px;
   border: 1px solid red;
-}
-#projects article:first-of-type {
-  width:50%
 }
