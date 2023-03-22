@@ -125,38 +125,71 @@ section {
   /* display:none; moved out of normal flow for <input> control functionality */
   padding:20px;
   grid-gap: 20px;
-  
   overflow-y: auto;
 }
-section article {
+section>:is(a,article) {
   background-color: black;
-  box-shadow: 1px 5px inset gray;
-  padding:20px;
-
-}
-section article {
+  border: 2px outset #1471b8;
   position:relative;
+  overflow: hidden;
 }
-section article:first-of-type {
+section>:is(a,article):nth-last-of-type(2n) {
+  border: 2px  outset #14b814;
+}
+section>:is(a,article):first-of-type {
   grid-column: 1 / span 2;
   display: table-cell;
-
-  
 }
-section img{
+section>article {
+  padding:20px;
+}
+section a figure{
+  background-position: center;
+  background-size: cover;
+  margin:0;
   width:100%;
+  height:300px;
   max-height: 80vh;
   object-fit: contain;
   object-position: 0;
+  transform: scale(1);
+  transition:all 0.3s ease-out;
 }
-section figcaption {
+section a:hover figure {
+  transform: scale(1.1);
+  filter:blur(3px) opacity(.7);
+}
+section a figcaption {
   position:absolute;
   bottom:30px;
   left:30px;
-  display:inline-block;
+  width: 85%;
+  overflow:hidden;
 }
-section figcaption * {
-  display:inline;
+section a figcaption :is(h3,p) {
+  padding:4px;
+  background:white;
+  transition: all 0.3s ease-out;
+  margin:0;
+  position:absolute;
+}
+section a figcaption :is(h3,p):nth-of-type(2n) {
+  position:static;
+  background:transparent;
+  color:transparent;
+}
+section a figcaption h3 {
+  display:inline-block;
+  top:100%;
+}
+section a:hover h3 {
+  top:0;
+}
+section a figcaption p {
+  bottom:100%;
+}
+section a:hover p {
+  bottom:0;
 }
 @media only screen and (max-width: 800px) {
   body {
