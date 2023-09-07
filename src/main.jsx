@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
-import "./normalize.css";
 import Root from "./routes/root";
 import ErrorPage from "./error-page";
 import Index from "./routes";
-import Projects from "./routes/projects";
 import Project from "./routes/project";
 import Skills from "./routes/skills";
-import { loader } from "./components/aside";
+import Contact from "./routes/contact";
+import { loader } from './routes/nav';
+import "./index.css";
+import 'flowbite';
 
 const router = createBrowserRouter([
   {
@@ -23,8 +23,8 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <Index /> },
           {
-            path: "projects",
-            element: <Projects />,
+            path: "contact",
+            element: <Contact />,
           },
           {
             path: "project/:projectId",
