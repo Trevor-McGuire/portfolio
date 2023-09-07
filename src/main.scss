@@ -1,0 +1,45 @@
+// colors for background, text, accents
+$bg1: black;
+$bg2: #333;
+$bg3: #666;
+$txt1: white;
+$acc1: #ff0000;
+
+// breakpoints
+$bp1: 768px;
+$bp2: 1200px;
+
+
+// make body $bg1
+body {
+  background-color: $bg1;
+  color: $txt1;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  div#root {
+    background-color: $bg2;
+    header {
+      background-color: red;
+      display: flex;
+      >#logo{
+        background-color: orange;
+      }
+      >h1{
+        background-color: steelblue;
+      }
+      >nav{
+        background-color: green;
+      }
+      >#menu-toggle{
+        background-color: blue;
+      }
+      >#menu-dropdown{
+        background-color: purple;
+      }
+      .active {
+        background-color: yellow;
+      }
+    }
+  }
+}

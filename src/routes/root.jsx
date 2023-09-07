@@ -1,11 +1,11 @@
 import { Outlet, useLoaderData } from "react-router-dom";
-import Nav, { loader as asideLoader } from "./nav";
+import Nav, { loader as asideLoader } from "./header";
 
 export default function Root() {
   return (
     <>
       <Nav />
-      <main className="m-5">
+      <main >
         <Outlet />
       </main>
     </>

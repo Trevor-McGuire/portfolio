@@ -7,9 +7,8 @@ import Index from "./routes";
 import Project from "./routes/project";
 import Skills from "./routes/skills";
 import Contact from "./routes/contact";
-import { loader } from './routes/nav';
-import "./index.css";
-import 'flowbite';
+import { loader } from './routes/header';
+import "./main.scss";
 
 const router = createBrowserRouter([
   {
