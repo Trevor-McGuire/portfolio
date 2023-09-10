@@ -33,7 +33,7 @@ export default function Index() {
       text.forEach((character) => {
         console.log(character)
         if (character === " ") {
-          newText += "&nbsp;";
+          newText += " ";
         } else {
           let rand = characters[Math.floor(Math.random() * characters.length)]
           newText += `<span class="unsolved" data-text="${character}">${rand}</span>`;
@@ -41,6 +41,7 @@ export default function Index() {
       });
       element.innerHTML = newText;
     });
+    
     let unsolved = Array.from(document.getElementsByClassName("unsolved"));
     while (unsolved.length > 0) {
       const rand = Math.floor(Math.random() * unsolved.length);
@@ -48,7 +49,7 @@ export default function Index() {
       unsolved[rand].innerHTML = unsolved[rand].dataset.text;
       unsolved.splice(rand, 1);
       // show the loop down here
-      await new Promise((resolve) => setTimeout(resolve, 0));
+      await new Promise((resolve) => setTimeout(resolve, 2));
     }
   };
 
