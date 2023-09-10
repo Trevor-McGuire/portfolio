@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, NavLink, useLoaderData } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Nav from "./nav";
 import projects from "../../projects";
 
@@ -89,12 +89,7 @@ const nav = () => {
           </div>
         </div>
       </div>
-      <Nav
-        currentPath={currentPath}
-        toggleNeeded={toggleNeeded}
-        mainToggled={mainToggled}
-        dropdownToggled={dropdownToggled}
-      />
+      <Nav currentPath={currentPath} />
     </header>
   );
 };

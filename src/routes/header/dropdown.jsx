@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const dropdown = ({ currentPath, mainToggled, dropdownToggled }) => {
+const dropdown = ({ currentPath }) => {
   const projects = [
     {
       projectId: 1,

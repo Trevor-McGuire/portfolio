@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Dropdown from "./dropdown";
 
-const nav = ({ currentPath, toggleNeeded, mainToggled, dropdownToggled }) => {
+const nav = ({ currentPath }) => {
   const paths = [
     { to: "/", text: "About" },
     { to: "/skills", text: "Skills" },
@@ -24,12 +24,7 @@ const nav = ({ currentPath, toggleNeeded, mainToggled, dropdownToggled }) => {
         })}
         <li id="dropdown-toggle">Projects</li>
       </ul>
-
-      <Dropdown
-        currentPath={currentPath}
-        mainToggled={mainToggled}
-        dropdownToggled={dropdownToggled}
-      />
+      <Dropdown currentPath={currentPath} />
     </nav>
   );
 };

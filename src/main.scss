@@ -69,7 +69,7 @@ header {
         background-color: $txt1;
         position: absolute;
         left: $line-height;
-        border-radius: $line-height;
+        border-radius: 100px;
       }
       .line1 {
         top: $line-height;
@@ -164,3 +164,34 @@ header {
   }
 }
 
+// mail body styleing
+// broken into 5 sections
+// 1. everyting
+// 2. about
+// 3. skills
+// 4. contact
+// 5. projects
+
+main {
+  padding: 1rem;
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+}
+
+.about {
+  
+  img {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 1rem 1rem 1rem 0;
+    
+  }
+  .emp1 {
+    font-weight: bold;
+    color: red;
+    // text-decoration: underline;
+  }
+}
