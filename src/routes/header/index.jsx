@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, NavLink, useLoaderData } from "react-router-dom";
-import Dropdown from "./dropdown";
 import Nav from "./nav";
 import projects from "../../projects";
 
@@ -9,18 +8,18 @@ export async function loader() {
 }
 
 const nav = () => {
-  // useState/Effect for the current path used to determine which nav item is active
-  // and pass it to the Nav/Dropdown components
   const [currentPath, setCurrentPath] = useState("");
+  const [toggleNeeded, setToggleNeeded] = useState(false);
+  const [mainToggled, setMainToggled] = useState(false);
+  const [dropdownToggled, setDropdownToggled] = useState(false);
+
   const location = useLocation();
   useEffect(() => setCurrentPath(location.pathname), [location]);
 
-  // useState/Effect for the toggling of the Nav/Dropdown components
-  // starts by making sure if nav toggle is even needed
-  const [toggleNeeded, setToggleNeeded] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       window.innerWidth < 768 ? setToggleNeeded(true) : setToggleNeeded(false);
+      toggleNeeded ? setMainToggled(false) : setMainToggled(true);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -29,41 +28,71 @@ const nav = () => {
     };
   }, []);
 
-  const [navToggled, setNavToggled] = useState(false);
   useEffect(() => {
     const handleToggle = () => {
-      setNavToggled(!navToggled);
-      if (navToggled === true) {
-        setDropdownToggled(false);
-      }
+      setMainToggled(!mainToggled);
+      mainToggled === true ? setDropdownToggled(false) : null;
     };
-    const navToggle = document.getElementById("nav-toggle");
-    navToggle.addEventListener("click", handleToggle);
+    const mainToggle = document.getElementById("main-toggle");
+    const mainList = document.getElementById("main-list");
+    mainToggled
+      ? (mainList.style.maxHeight = hiddenCloneHeight(mainList))
+      : (mainList.style.maxHeight = "0px");
+      mainToggle.addEventListener("click", handleToggle);
     return () => {
-      navToggle.removeEventListener("click", handleToggle);
+      mainToggle.removeEventListener("click", handleToggle);
     };
-  }, [navToggled]);
+  }, [mainToggled]);
 
-  const [dropdownToggled, setDropdownToggled] = useState(false);
   useEffect(() => {
     const handleToggle = () => {
       setDropdownToggled(!dropdownToggled);
     };
     const dropdownToggle = document.getElementById("dropdown-toggle");
+    const dropdownList = document.getElementById("dropdown-list");
+    dropdownToggled
+      ? (dropdownList.style.maxHeight = hiddenCloneHeight(dropdownList))
+      : (dropdownList.style.maxHeight = "0px");
     dropdownToggle.addEventListener("click", handleToggle);
     return () => {
       dropdownToggle.removeEventListener("click", handleToggle);
     };
   }, [dropdownToggled]);
 
+  const hiddenCloneHeight = (element) => {
+    let clone = element.cloneNode(true);
+    clone.style.visibility = "hidden";
+    clone.style.position = "absolute";
+    clone.style.maxHeight = "9999px";
+    document.body.appendChild(clone);
+    let height = window.getComputedStyle(clone).height;
+    document.body.removeChild(clone);
+    return height;
+  };
+
   return (
-    <header>
-      <div id="logo">TM</div>
-      <h1>Trevor McGuire</h1>
-      <Nav currentPath={currentPath} navToggled={navToggled} />
-      <Dropdown 
+    <header
+      className={`
+        ${!toggleNeeded ? "toggle-not-needed" : "toggle-needed"} 
+        ${!mainToggled ? "main-not-toggled" : "main-toggled"} 
+        ${!dropdownToggled ? "dropdown-not-toggled" : "dropdown-toggled"}
+      `}
+    >
+      <div>
+        <div id="logo">TM</div>
+        <h1>Trevor McGuire</h1>
+        <div id="main-toggle">
+          <div>
+            <div className="line line1"></div>
+            <div className="line line2"></div>
+            <div className="line line3"></div>
+          </div>
+        </div>
+      </div>
+      <Nav
         currentPath={currentPath}
-        navToggled={navToggled}
+        toggleNeeded={toggleNeeded}
+        mainToggled={mainToggled}
         dropdownToggled={dropdownToggled}
       />
     </header>

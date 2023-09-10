@@ -9,9 +9,13 @@ $acc1: #ff0000;
 $bp1: 768px;
 $bp2: 1200px;
 
-
-// make body $bg1
+// some global styling
 body {
+  overflow-x: hidden;
+  & * {
+    box-sizing: content-box;
+    transition: all 0.25s ease-in-out;
+  }
   background-color: $bg1;
   color: $txt1;
   padding: 0;
@@ -19,27 +23,144 @@ body {
   font-family: "Roboto", sans-serif;
   div#root {
     background-color: $bg2;
-    header {
-      background-color: red;
+    min-height: 100vh;
+    padding: 0;
+  }
+}
+
+// start of header styling
+// broken into 4 sections
+// 1. header
+// 2. header toggle-needed || not-needed
+// 3. header main-toggled || not-needed
+// 4. header dropdown-toggled || not-needed
+$line-height: 12.5%;
+header {
+  padding: 1rem;
+  background-color: $bg3;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > * {
+      margin: 0;
+    }
+    #logo {
+      // cool effect to make a text based logo pop
+      font-size: 1.5rem;
+      text-shadow: 0px 0px 5px $acc1;
+    }
+    h1 {
+      align-items: center;
+
+    }
+    #main-toggle {
+      height: 50px;
+      width: 50px;
+      background-color: $bg2;
+      position:relative;
+      cursor: pointer;
+      border-radius: 5px;
+      overflow: hidden;
+      .line {
+        
+        width: calc(100% - 2 * $line-height);
+        height: $line-height;
+        background-color: $txt1;
+        position: absolute;
+        left: $line-height;
+        border-radius: $line-height;
+      }
+      .line1 {
+        top: $line-height;
+      }
+      .line2 {
+        top: calc(50% - $line-height / 2);
+      }
+      .line3 {
+        bottom: $line-height;
+      }
+    }
+  }
+  nav {
+    #main-list,
+    #dropdown-list {
+      list-style: none;
       display: flex;
-      >#logo{
-        background-color: orange;
-      }
-      >h1{
-        background-color: steelblue;
-      }
-      >nav{
-        background-color: green;
-      }
-      >#menu-toggle{
-        background-color: blue;
-      }
-      >#menu-dropdown{
-        background-color: purple;
+      justify-content: flex-end;
+      overflow:hidden;
+      margin:0rem;
+      padding: 0;
+      li {
+        margin: 10px;
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          color: $txt1;
+        }
+        &:hover,
+        a:hover {
+          color: $acc1;
+        }
       }
       .active {
-        background-color: yellow;
+        color: $acc1;
       }
     }
   }
 }
+
+header {
+  &.toggle-needed {
+  }
+  &.toggle-not-needed {
+    #main-toggle {
+      display: hidden;
+    }
+  }
+}
+
+header {
+  &.main-toggled {
+    #main-toggle {
+      .line1 {
+        transform: rotate(45deg);
+        top: calc(50% - $line-height / 2);
+      }
+      .line2 {
+        opacity: 0;
+      }
+      .line3 {
+        transform: rotate(-45deg);
+        bottom: calc(50% - $line-height / 2);
+      }
+    }
+  }
+  &.main-not-toggled {
+    #main-list {
+      
+    }
+
+  }
+}
+
+header {
+  &.dropdown-toggled {
+
+    #dropdown-toggle::after {
+      content: "▼";
+      margin-left: 5px;
+    }
+  }
+  &.dropdown-not-toggled {
+
+    #dropdown-toggle {
+      &::after {
+        content: "▲";
+        margin-left: 5px;
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+

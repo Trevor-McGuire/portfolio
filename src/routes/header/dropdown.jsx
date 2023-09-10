@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const dropdown = ({ currentPath,navToggled,dropdownToggled}) => {
+const dropdown = ({ currentPath, mainToggled, dropdownToggled }) => {
   const projects = [
     {
       projectId: 1,
@@ -30,30 +30,25 @@ const dropdown = ({ currentPath,navToggled,dropdownToggled}) => {
     },
   ];
   return (
-    <div 
-      id="menu-dropdown"
-      style={{ display: dropdownToggled ? "block" : "none" }}
-    >
+    <ul id="dropdown-list">
       {projects.map((project) => {
         return (
-          <ul key={project.projectId}>
-            <li>
-              <NavLink
-                to={`/project/${project.projectId}`}
-                className={
-                  currentPath === `/project/${project.projectId}`
-                    ? "active"
-                    : "inactive"
-                }
-              >
-                <div>{project.title}</div>
-                <span>{project.description}</span>
-              </NavLink>
-            </li>
-          </ul>
+          <li key={project.projectId}>
+            <NavLink
+              to={`/project/${project.projectId}`}
+              className={
+                currentPath === `/project/${project.projectId}`
+                  ? "active"
+                  : "inactive"
+              }
+            >
+              <div>{project.title}</div>
+              <span>{project.description}</span>
+            </NavLink>
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 };
 

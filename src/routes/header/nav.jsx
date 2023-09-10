@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
+import Dropdown from "./dropdown";
 
-const nav = ({ currentPath, navToggled }) => {
+const nav = ({ currentPath, toggleNeeded, mainToggled, dropdownToggled }) => {
   const paths = [
     { to: "/", text: "About" },
     { to: "/skills", text: "Skills" },
@@ -8,10 +9,7 @@ const nav = ({ currentPath, navToggled }) => {
   ];
   return (
     <nav>
-      <ul
-        // if navToggled===true set the display to block and none if false
-        style={{ display: navToggled ? "block" : "none" }}
-      >
+      <ul id="main-list">
         {paths.map((path) => {
           return (
             <li key={path.to}>
@@ -24,13 +22,14 @@ const nav = ({ currentPath, navToggled }) => {
             </li>
           );
         })}
-        <li>
-          <button id="dropdown-toggle">Projects </button>
-        </li>
+        <li id="dropdown-toggle">Projects</li>
       </ul>
-      <button type="button" id="nav-toggle">
-        Menu Toggle
-      </button>
+
+      <Dropdown
+        currentPath={currentPath}
+        mainToggled={mainToggled}
+        dropdownToggled={dropdownToggled}
+      />
     </nav>
   );
 };
