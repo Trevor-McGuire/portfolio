@@ -79,7 +79,11 @@ const nav = () => {
       `}
     >
       <div>
-        <div id="logo">TM</div>
+        <div id="logo">
+          <div id='logo-t'></div>
+          <div id='logo-m'></div>
+          <div id='logo-b'></div>
+        </div>
         <h1>Trevor McGuire</h1>
         <div id="main-toggle">
           <div>

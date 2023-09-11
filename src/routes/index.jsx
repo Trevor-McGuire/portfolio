@@ -31,7 +31,6 @@ export default function Index() {
       let newText = "";
 
       text.forEach((character) => {
-        console.log(character)
         if (character === " ") {
           newText += " ";
         } else {
@@ -45,11 +44,9 @@ export default function Index() {
     let unsolved = Array.from(document.getElementsByClassName("unsolved"));
     while (unsolved.length > 0) {
       const rand = Math.floor(Math.random() * unsolved.length);
-      unsolved[rand].classList.remove("unsolved");
       unsolved[rand].innerHTML = unsolved[rand].dataset.text;
       unsolved.splice(rand, 1);
-      // show the loop down here
-      await new Promise((resolve) => setTimeout(resolve, 2));
+      await new Promise((resolve) => setTimeout(resolve, 0));
     }
   };
 
