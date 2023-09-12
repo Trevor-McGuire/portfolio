@@ -1,0 +1,36 @@
+:root {
+  --theme-color: #f00; // default color
+}
+
+// colors for background, text, accents
+$bg1: black;
+$bg2: #333;
+$bg3: #666;
+$txt1: white;
+$acc1: #ff0000;
+
+// breakpoints
+$bp1: 768px;
+$bp2: 1200px;
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  & * {
+    box-sizing: content-box;
+    transition: all 0.25s ease-in-out;
+  }
+  background-color: $bg1;
+  color: $txt1;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  div#root {
+    background-color: $bg2;
+    min-height: 100vh;
+    padding: 0;
+  }
+}
+
+@import 'pages/index';
+@import './header/index';

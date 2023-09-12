@@ -8,7 +8,7 @@ import Project from "./routes/project";
 import Skills from "./routes/skills";
 import Contact from "./routes/contact";
 import { loader } from './routes/header';
-import "./main.scss";
+import "./style/index.scss";
 import "./normalize.css"
 
 const router = createBrowserRouter([

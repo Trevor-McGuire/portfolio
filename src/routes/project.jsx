@@ -9,17 +9,22 @@ const project = () => {
   );
 
   return (
-    <>
+    <div id='pages-project'>
       <h1>{project.title}</h1>
-      <section style={{ backgroundImage: `url(${project.image})` }}>
-        <p>{project.text}</p>
-        <div>
+      <div>
           <a href={project.link} target="_blank">
             View Deployment
           </a>
+          <a href={project.link} target="_blank">
+            View GibHub
+          </a>
         </div>
+      <section style={{ backgroundImage: `url(${project.image})` }}>
+        
+
       </section>
-    </>
+      <p>{project.text}</p>
+    </div>
   );
 };
 

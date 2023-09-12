@@ -1,0 +1,15 @@
+.about {
+  img {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 1rem 1rem 1rem 0;
+  }
+  .emp1 {
+    font-weight: bold;
+    color: var(--theme-color);
+    // text-decoration: underline;
+    white-space: normal;
+    font-family: monospace;
+  }
+}

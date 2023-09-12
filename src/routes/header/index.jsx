@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import Nav from "./nav";
 import projects from "../../projects";
+import Section from "./section";
+import ListMain from "./listMain";
+import ListProjects from "./listProjects";
 
 export async function loader() {
   return projects;
@@ -78,22 +80,11 @@ const nav = () => {
         ${!dropdownToggled ? "dropdown-not-toggled" : "dropdown-toggled"}
       `}
     >
-      <div>
-        <div id="logo">
-          <div id='logo-t'></div>
-          <div id='logo-m'></div>
-          <div id='logo-b'></div>
-        </div>
-        <h1>Trevor McGuire</h1>
-        <div id="main-toggle">
-          <div>
-            <div className="line line1"></div>
-            <div className="line line2"></div>
-            <div className="line line3"></div>
-          </div>
-        </div>
-      </div>
-      <Nav currentPath={currentPath} />
+      <Section />
+      <nav>
+        <ListMain currentPath={currentPath} />
+        <ListProjects currentPath={currentPath} />
+      </nav>
     </header>
   );
 };

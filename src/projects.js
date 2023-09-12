@@ -1,10 +1,12 @@
+import techBlogImg from './assets/tech-blog.png'
+
 const projects = [
   {
     projectId: 1,
-    title: 'Project 1',
-    description: 'This is the first project',
-    text: 'This is the first project. I will put a longer description here.',
-    image: 'https://blog.magezon.com/wp-content/uploads/2022/03/image-32-1024x526.png',
+    title: 'Tech Blog',
+    description: 'Social Media for Tech Enthusiasts',
+    text: 'Tech blog allows users to register and login to post, comment, and like posts. Users can also view other users profiles and see their posts. This application uses the MVC paradigm and is built with Handlebars.js, Sequelize, Express.js, and Node.js.',
+    image: techBlogImg,
     link: 'https://www.google.com'
   },
   {

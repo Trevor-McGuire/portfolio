@@ -1,0 +1,33 @@
+.skills {
+  ol {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(800px / 4), 1fr));
+    grid-gap: 1rem;
+    li {
+      border: 1px solid $txt1;
+      padding: 0.5rem;
+      
+      border-radius: 0.5rem;
+      list-style: none;
+      span {
+        float: left;
+        padding-right: 1rem;
+        color: var(--theme-color);
+        svg {
+          height: 3rem;
+          width: 3rem;
+        }
+      }
+      h3 {
+        margin: 0;
+        display: inline;
+      }
+      time {
+        display: block;
+        font-size: smaller;
+      }
+    }
+  }
+}

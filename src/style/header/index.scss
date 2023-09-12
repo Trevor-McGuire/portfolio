@@ -1,0 +1,74 @@
+// start of header styling
+// broken into 4 sections
+// 1. header
+// 2. header toggle-needed || not-needed
+// 3. header main-toggled || not-needed
+// 4. header dropdown-toggled || not-needed
+$line-height: 12.5%; // for menu button
+$letter-width: 25%; // for the logo
+$m: 25%; // for the logo
+
+header {
+  padding: 1rem;
+  background-image: linear-gradient(to bottom, $bg3, $bg1 90%, $bg2);
+  filter: drop-shadow(0px 0px 8px var(--theme-color));
+  user-select: none;
+  -webkit-user-drag: none;
+  
+  nav,
+  section {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+header {
+  &.dropdown-toggled {
+    #dropdown-toggle::after {
+      content: "▼";
+      margin-left: 5px;
+    }
+  }
+  &.dropdown-not-toggled {
+    #dropdown-toggle {
+      &::after {
+        content: "▲";
+        margin-left: 5px;
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+header {
+  &.main-toggled {
+    #main-toggle {
+      .line1 {
+        transform: rotate(45deg);
+        top: calc(50% - $line-height / 2);
+      }
+      .line2 {
+        opacity: 0;
+      }
+      .line3 {
+        transform: rotate(-45deg);
+        bottom: calc(50% - $line-height / 2);
+      }
+    }
+  }
+  &.main-not-toggled {
+    #main-list {
+    }
+  }
+}
+header {
+  &.toggle-needed {
+  }
+  &.toggle-not-needed {
+    #main-toggle {
+      display: hidden;
+    }
+  }
+}
+
+@import './listMain';
+@import './listProjects';
+@import './section';

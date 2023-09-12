@@ -1,0 +1,30 @@
+#pages-project {
+  a {
+    color: $txt1;
+    text-decoration: none;
+    background-color: $bg3;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      color: $acc1;
+      background-color: $bg2;
+      
+    }
+  }
+  section {
+    // make height equal to the width
+    padding-bottom: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 1rem;
+    border: 2px solid black;
+    filter: drop-shadow(0px 0px 3px $acc1);
+  }
+
+}

@@ -1,0 +1,102 @@
+section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  > * {
+    margin: 0;
+  }
+  #logo {
+    height: 50px;
+    width: 100px;
+    background-color: $bg2;
+    padding: 5px;
+    border-radius: 15px;
+    border: 3px outset $bg2;
+    filter: drop-shadow(0px 0px 3px var(--theme-color));
+    cursor: pointer;
+    #logo-t,
+    #logo-m {
+      height: 50px;
+      width: 50px;
+      display: inline-block;
+    }
+    #logo-t {
+      background-image: linear-gradient(to top right, var(--theme-color), $txt1);
+      clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% $letter-width,
+        calc(100% - (100% - $letter-width) / 2) $letter-width,
+        calc(100% - (100% - $letter-width) / 2) 100%,
+        calc((100% - $letter-width) / 2) 100%,
+        calc((100% - $letter-width) / 2) $letter-width,
+        0% $letter-width
+      );
+    }
+    #logo-m {
+      background-image: linear-gradient(to top left, var(--theme-color), $txt1);
+      clip-path: polygon(
+        0% 0%,
+        $m 0%,
+        50% calc(1.5 * $m),
+        calc(100% - $m) 0,
+        100% 0%,
+        100% 100%,
+        calc(100% - $m) 100%,
+        calc(100% - $m) calc(1.5 * $m),
+        50% 100%,
+        $m calc(1.5 * $m),
+        $m 100%,
+        0% 100%
+      );
+    }
+    &:hover {
+      filter: drop-shadow(0px 0px 3px var(--theme-color)) brightness(1.2);
+    }
+    &:active,
+    &:focus {
+      border: 3px inset $bg2;
+      filter: drop-shadow(0px 0px 3px var(--theme-color)) brightness(0.8);
+    }
+  }
+  h1 {
+    align-items: center;
+  }
+  #main-toggle {
+    height: 50px;
+    width: 50px;
+    background-color: $bg2;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 3px outset $bg2;
+    filter: drop-shadow(0px 0px 3px var(--theme-color));
+    cursor: pointer;
+    .line {
+      width: calc(100% - 2 * $line-height);
+      height: $line-height;
+      background-color: $txt1;
+      position: absolute;
+      left: $line-height;
+      border-radius: 100px;
+    }
+    .line1 {
+      top: $line-height;
+    }
+    .line2 {
+      top: calc(50% - $line-height / 2);
+    }
+    .line3 {
+      bottom: $line-height;
+    }
+    &:hover {
+      filter: drop-shadow(0px 0px 3px $acc1) brightness(1.2);
+    }
+    &:active,
+    &:focus {
+      border: 3px inset $bg2;
+      filter: drop-shadow(0px 0px 3px $acc1) brightness(.8);
+    }
+  }
+}

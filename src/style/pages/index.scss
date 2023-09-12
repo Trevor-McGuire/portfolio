@@ -1,0 +1,17 @@
+/*
+  very simple file structure breakdown with global styles and page specific styles
+*/
+main {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+}
+
+@import 'about';
+@import 'skills';
+@import 'projects';
+@import 'contact';
