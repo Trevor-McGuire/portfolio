@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const listProjects = ({ currentPath }) => {
   return (
-    <ul id="dropdown-list">
+    <ul id="list-projects">
       {projects.map((project) => {
         return (
           <li key={project.projectId}>

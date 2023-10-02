@@ -9,9 +9,12 @@ const project = () => {
   );
 
   return (
-    <div id='pages-project'>
+    <div id="pages-project">
       <h1>{project.title}</h1>
-      <div>
+
+      <section style={{ backgroundImage: `url(${project.image})` }}>
+        {" "}
+        <div>
           <a href={project.link} target="_blank">
             View Deployment
           </a>
@@ -19,9 +22,6 @@ const project = () => {
             View GibHub
           </a>
         </div>
-      <section style={{ backgroundImage: `url(${project.image})` }}>
-        
-
       </section>
       <p>{project.text}</p>
     </div>

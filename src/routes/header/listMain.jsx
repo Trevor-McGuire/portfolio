@@ -9,7 +9,7 @@ const listMain = ({ currentPath }) => {
   ];
 
   return (
-    <ul id="main-list">
+    <ul id="list-main">
       {paths.map((path) => {
         return (
           <li key={path.to}>

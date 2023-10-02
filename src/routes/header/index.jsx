@@ -36,10 +36,10 @@ const nav = () => {
       mainToggled === true ? setDropdownToggled(false) : null;
     };
     const mainToggle = document.getElementById("main-toggle");
-    const mainList = document.getElementById("main-list");
+    const listMain = document.getElementById("list-main");
     mainToggled
-      ? (mainList.style.maxHeight = hiddenCloneHeight(mainList))
-      : (mainList.style.maxHeight = "0px");
+      ? (listMain.style.maxHeight = hiddenCloneHeight(listMain))
+      : (listMain.style.maxHeight = "0px");
       mainToggle.addEventListener("click", handleToggle);
     return () => {
       mainToggle.removeEventListener("click", handleToggle);
@@ -51,10 +51,10 @@ const nav = () => {
       setDropdownToggled(!dropdownToggled);
     };
     const dropdownToggle = document.getElementById("dropdown-toggle");
-    const dropdownList = document.getElementById("dropdown-list");
+    const listProjects = document.getElementById("list-projects");
     dropdownToggled
-      ? (dropdownList.style.maxHeight = hiddenCloneHeight(dropdownList))
-      : (dropdownList.style.maxHeight = "0px");
+      ? (listProjects.style.maxHeight = hiddenCloneHeight(listProjects))
+      : (listProjects.style.maxHeight = "0px");
     dropdownToggle.addEventListener("click", handleToggle);
     return () => {
       dropdownToggle.removeEventListener("click", handleToggle);

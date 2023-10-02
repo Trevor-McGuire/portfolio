@@ -9,7 +9,6 @@ const section = () => {
       '#0ff',
     ]
     const currentColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-color');
-    console.log(currentColor)
     const index = colorTheme.indexOf(currentColor);
     if (index === colorTheme.length - 1) {
       return colorTheme[0];
