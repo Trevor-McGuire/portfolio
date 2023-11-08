@@ -2,11 +2,16 @@ import React from "react";
 import projects from "../projects";
 import { useParams } from "react-router-dom";
 
+
 const project = () => {
   const { projectId } = useParams();
   const project = projects.find(
     (project) => project.projectId === Number(projectId)
   );
+
+  const createMarkup = (htmlString) => {
+    return { __html: htmlString };
+  };
 
   return (
     <div id="pages-project">
@@ -23,7 +28,7 @@ const project = () => {
           </a>
         </div>
       </section>
-      <p>{project.text}</p>
+      <div dangerouslySetInnerHTML={createMarkup(project.text)} />
     </div>
   );
 };

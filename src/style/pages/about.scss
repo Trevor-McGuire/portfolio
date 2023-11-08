@@ -1,9 +1,15 @@
+// variables
+$fontHeight: 26px;
+$lineHeight: 26px;
+$imageMultiplier: 8;
+
 .about {
   img {
-    width: 100px;
-    height: 100px;
+    width: calc($lineHeight * $imageMultiplier);
+    height: calc($lineHeight * $imageMultiplier);
     float: left;
-    margin: 1rem 1rem 1rem 0;
+    border-radius: 100%;
+    margin: $lineHeight calc($lineHeight/2) calc($lineHeight/2) 0;
   }
   .emp1 {
     font-weight: bold;
@@ -11,5 +17,9 @@
     // text-decoration: underline;
     white-space: normal;
     font-family: monospace;
+  }
+  p {
+    font-size: calc($fontHeight * .9);
+    line-height: $lineHeight;
   }
 }

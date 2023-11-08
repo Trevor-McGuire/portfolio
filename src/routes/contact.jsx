@@ -29,6 +29,7 @@ const contact = () => {
       title: "LinkedIn:",
     },
   ]
+
   return (
     <div id='page-contact'>
       <IconContext.Provider value={{ className: "icons", size: "3.5rem" }}>
@@ -41,7 +42,7 @@ const contact = () => {
           {contactArray.map((contact) => {
             return (
               <li key={contact.id}>
-                <a href={contact.href}>
+                <a href={contact.href} target="_blank" >
                   {contact.image}
                   <h3>{contact.title}</h3>
                 </a>
@@ -49,7 +50,6 @@ const contact = () => {
             );
           })}
         </ul>
-        <div></div>
       </IconContext.Provider>
     </div>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Profile from "../assets/Profile.png";
+import Profile from "../assets/profilePicture.jpg";
 
 export default function Index() {
   const [decoderRun, setDecoderRun] = useState(true);

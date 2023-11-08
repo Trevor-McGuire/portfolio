@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../../NexCommerce"
+		}
+	],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "WebDevelopment",
+    "git.ignoreLimitWarning": true
+  }
+}
