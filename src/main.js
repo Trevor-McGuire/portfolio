@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./routes/root.jsx";
-import ErrorPage from "./error-page.jsx";
-import Index from "./routes/index.jsx";
-import Project from "./routes/project.jsx";
-import Skills from "./routes/skills.jsx";
-import Contact from "./routes/contact.jsx";
-import { loader } from './routes/header/index.jsx';
+import Root from "./routes/root.js";
+import ErrorPage from "./error-page.js";
+import Index from "./routes/index.js";
+import Project from "./routes/project.js";
+import Skills from "./routes/skills.js";
+import Contact from "./routes/contact.js";
+import { loader } from './routes/header/index.js';
 import "./style/index.scss";
 import "./normalize.css"
 
