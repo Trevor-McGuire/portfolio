@@ -1,7 +1,8 @@
-import projects from '../../projects'
+import PropTypes from "prop-types";
+import projects from "../../projects";
 import { NavLink } from "react-router-dom";
 
-const listProjects = ({ currentPath }) => {
+const ListProjects = ({ currentPath }) => {
   return (
     <ul id="list-projects">
       {projects.map((project) => {
@@ -16,7 +17,6 @@ const listProjects = ({ currentPath }) => {
               }
             >
               <div>{project.title}</div>
-              <span>{project.description}</span>
             </NavLink>
           </li>
         );
@@ -25,4 +25,8 @@ const listProjects = ({ currentPath }) => {
   );
 };
 
-export default listProjects;
+ListProjects.propTypes = {
+  currentPath: PropTypes.string.isRequired,
+};
+
+export default ListProjects;

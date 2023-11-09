@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./header";
 
-export default function Root() {
+const Root = () => {
   return (
     <>
       <Header />
@@ -10,4 +10,6 @@ export default function Root() {
       </main>
     </>
   );
-}
+};
+
+export default Root;

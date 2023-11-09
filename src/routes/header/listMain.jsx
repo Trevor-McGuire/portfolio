@@ -1,7 +1,7 @@
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
-const listMain = ({ currentPath }) => {
-
+const ListMain = ({ currentPath }) => {
   const paths = [
     { to: "/", text: "About" },
     { to: "/skills", text: "Skills" },
@@ -27,4 +27,8 @@ const listMain = ({ currentPath }) => {
   );
 };
 
-export default listMain;
+ListMain.propTypes = {
+  currentPath: PropTypes.string.isRequired,
+};
+
+export default ListMain;

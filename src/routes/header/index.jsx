@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import projects from "../../projects";
-import Section from "./section";
-import ListMain from "./listMain";
-import ListProjects from "./listProjects";
+import Section from "./Section";
+import ListMain from "./ListMain";
+import ListProjects from "./ListProjects";
 
-export async function loader() {
-  return projects;
-}
-
-const nav = () => {
+const Index = () => {
   const [currentPath, setCurrentPath] = useState("");
   const [toggleNeeded, setToggleNeeded] = useState(false);
   const [mainToggled, setMainToggled] = useState(false);
@@ -28,7 +23,7 @@ const nav = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [toggleNeeded]);
 
   useEffect(() => {
     const handleToggle = () => {
@@ -40,7 +35,7 @@ const nav = () => {
     mainToggled
       ? (listMain.style.maxHeight = hiddenCloneHeight(listMain))
       : (listMain.style.maxHeight = "0px");
-      mainToggle.addEventListener("click", handleToggle);
+    mainToggle.addEventListener("click", handleToggle);
     return () => {
       mainToggle.removeEventListener("click", handleToggle);
     };
@@ -89,4 +84,4 @@ const nav = () => {
   );
 };
 
-export default nav;
+export default Index;

@@ -1,9 +1,7 @@
-import React from "react";
 import projects from "../projects";
 import { useParams } from "react-router-dom";
 
-
-const project = () => {
+const Project = () => {
   const { projectId } = useParams();
   const project = projects.find(
     (project) => project.projectId === Number(projectId)
@@ -16,15 +14,13 @@ const project = () => {
   return (
     <div id="pages-project">
       <h1>{project.title}</h1>
+      <h2>{project.description}</h2>
 
       <section style={{ backgroundImage: `url(${project.image})` }}>
         {" "}
         <div>
-          <a href={project.link} target="_blank">
+          <a href={project.link} target="_blank" rel="noopener noreferrer">
             View Deployment
-          </a>
-          <a href={project.link} target="_blank">
-            View GibHub
           </a>
         </div>
       </section>
@@ -33,4 +29,4 @@ const project = () => {
   );
 };
 
-export default project;
+export default Project;

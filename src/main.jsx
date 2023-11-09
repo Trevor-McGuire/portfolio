@@ -1,22 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./routes/root";
-import ErrorPage from "./error-page";
-import Index from "./routes/index";
-import Project from "./routes/project";
-import Skills from "./routes/skills";
-import Contact from "./routes/contact";
-import { loader } from './routes/header/index';
+import Root from "./routes/Root";
+import ErrorPage from "./Error-page";
+import Index from "./routes/Index";
+import Project from "./routes/Project";
+import Skills from "./routes/Skills";
+import Contact from "./routes/Contact";
 import "./style/index.scss";
-import "./normalize.css"
+import "./normalize.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
-    loader: loader,
+
     children: [
       {
         errorElement: <ErrorPage />,
@@ -33,11 +32,10 @@ const router = createBrowserRouter([
           {
             path: "skills",
             element: <Skills />,
-          }
+          },
         ],
       },
     ],
-
   },
 ]);
 

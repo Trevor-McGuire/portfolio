@@ -1,14 +1,10 @@
-const section = () => {
+const Section = () => {
   // function to find item in an array and then select the next item
-  const nextItem = (array) => {
-    const colorTheme = [
-      '#f00',
-      '#0f0',
-      '#ff0',
-      '#f0f',
-      '#0ff',
-    ]
-    const currentColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-color');
+  const nextItem = () => {
+    const colorTheme = ["#f00", "#0f0", "#ff0", "#f0f", "#0ff"];
+    const currentColor = getComputedStyle(
+      document.documentElement
+    ).getPropertyValue("--theme-color");
     const index = colorTheme.indexOf(currentColor);
     if (index === colorTheme.length - 1) {
       return colorTheme[0];
@@ -17,13 +13,15 @@ const section = () => {
     }
   };
 
-
   return (
     <section>
-      <div 
+      <div
         id="logo"
         onClick={() => {
-          document.documentElement.style.setProperty('--theme-color', nextItem()); // new color
+          document.documentElement.style.setProperty(
+            "--theme-color",
+            nextItem()
+          ); // new color
         }}
       >
         <div id="logo-t"></div>
@@ -42,4 +40,4 @@ const section = () => {
   );
 };
 
-export default section;
+export default Section;
