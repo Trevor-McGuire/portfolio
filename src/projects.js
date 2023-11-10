@@ -8,13 +8,26 @@ const projects = [
     text: `
 <h2>Project goals:</h2>
   <ul>
-    <li>Develop a large MERN stack application centered around a mock e-commerce shopping experience.</li>
-    <li>Add security features to keep user data private</li>
-    <li>Ensure scaleability in hosting and data storage</li>
-    <li>Fill it with a variety of products, including accurate and comprehensive data sets, to give the user a real feeling experience.</li>
-    <li>Make the site easy to navigate and intuative to use on either desktop or mobile.</li>
-    <li>Optomize proformace and impliment skeleton loading structures to minimize wait times and frustration.</li>
-    <li>Bring it all together to drive client engagement.</li>
+    <b>Encompasing: </b>
+      <ul>Develop a large MERN stack application centered around a mock e-commerce shopping experience.</ul>
+      <br />
+    <b>Secure: </b>
+      <ul>Add security features to keep user data private</ul>
+      <br />
+    <b>Scaleable: </b>
+      <ul>Ensure scaleability in hosting and data storage</ul>
+      <br />
+    <b>Authentic: </b>
+      <ul>Fill it with a variety of products, including accurate and comprehensive data sets, to give the user a real feeling experience.</ul>
+      <br />
+    <b>Intuative: </b>
+      <ul>Make the site easy to navigate and intuative to use on either desktop or mobile.</ul>
+      <br />
+    <b>Optomized: </b>
+      <ul>Optomize proformace and impliment skeleton loading structures to minimize wait times and frustration.</ul>
+      <br />
+    <b>Engaging: </b>
+      <ul>Bring it all together to drive client engagement.</ul>
   </ul>
 `,
     image: nexCommerceImg,

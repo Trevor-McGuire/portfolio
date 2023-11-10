@@ -10,8 +10,9 @@ $m: 25%; // for the logo
 
 header {
   padding: 1rem;
+  margin-bottom: 1rem;
   background-image: linear-gradient(to bottom, $bg3, $bg1 90%, $bg2);
-  filter: drop-shadow(0px 0px 8px var(--theme-color));
+  filter: drop-shadow(0px 0px 5px var(--theme-color));
   user-select: none;
   -webkit-user-drag: none;
   nav,

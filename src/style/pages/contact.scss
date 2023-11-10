@@ -7,19 +7,22 @@
     grid-gap: 1rem;
     li {
       border: 1px solid $txt1;
-      padding: 0.5rem;
+      overflow: hidden;
       display: flex;
       justify-content: center;
       border-radius: 0.5rem;
       list-style: none;
       a {
+        padding: 0.75rem;
+        width: 100%;
         display: flex;
         align-items: center;
         flex-direction: column;
         text-decoration: none;
         color: $txt1;
         &:hover {
-          color: #000;
+
+          background-color: $bg1;
         }
       }
       svg {
