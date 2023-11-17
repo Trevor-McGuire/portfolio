@@ -1,40 +1,25 @@
 #page-contact {
-  ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(calc(800px / 4), 1fr));
-    grid-gap: 1rem;
-    li {
-      border: 1px solid $txt1;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      border-radius: 0.5rem;
-      list-style: none;
-      a {
-        padding: 0.75rem;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        text-decoration: none;
-        color: $txt1;
-        &:hover {
 
-          background-color: $bg1;
-        }
-      }
-      svg {
-        height: 3rem;
-        width: 3rem;
-        margin-bottom: 0.5rem;
-        color: var(--theme-color);
-      }
-      h3 {
-        margin: 0;
-        display: inline;
-      }
-    }
+  a,
+  div {
+    padding: 0.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: $txt1;
+
+  }
+  svg {
+    height: 3rem;
+    width: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--theme-color);
+  }
+  h3 {
+    margin: 0;
+    display: inline;
   }
 }
+
