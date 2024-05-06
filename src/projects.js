@@ -31,7 +31,7 @@ const projects = [
   </ul>
 `,
     image: nexCommerceImg,
-    link: "https://quiet-crag-67677-6674f147e1fd.herokuapp.com/",
+    link: "https://nexcommerce-f2a2d1bdc293.herokuapp.com/",
   },
   // {
   //   projectId: 2,
